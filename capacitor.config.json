@@ -1,6 +1,6 @@
 {
   "appId": "com.musixyz.player",
   "appName": "musixyz",
-  "webDir": ".",
+  "webDir": "www",
   "bundledWebRuntime": false
 }
