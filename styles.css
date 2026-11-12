@@ -1,0 +1,73 @@
+*{box-sizing:border-box}
+:root{--teal:#008080;--gray:#c0c0c0;--dark:#404040;--white:#fff;--navy:#000080;--ink:#111;--shadow:#808080}
+html,body{margin:0;min-height:100%;font-family:Tahoma,"MS Sans Serif",Arial,sans-serif;color:var(--ink);font-size:13px}
+body{background:var(--teal);overflow-x:hidden}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+.desktop{min-height:100svh;padding:18px 12px 54px;position:relative;background-color:var(--teal);background-image:radial-gradient(#ffffff0b 1px,transparent 1px);background-size:4px 4px}
+.desktop-icons{position:absolute;top:18px;left:12px;display:flex;gap:16px;z-index:0}
+.desktop-icon{border:0;background:transparent;color:#fff;text-shadow:1px 1px #000;display:flex;flex-direction:column;align-items:center;gap:4px;width:68px;font-size:11px;padding:4px}
+.desktop-icon:focus{outline:1px dotted white;background:#0002}
+.desktop-icon-art{font-size:27px;filter:drop-shadow(1px 1px #333)}
+.main-window,.player-window{background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:1px 1px #000;position:relative;z-index:1}
+.main-window{width:min(760px,100%);margin:68px auto 15px}
+.titlebar{height:27px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:2px 3px 2px 6px;font-weight:bold}
+.titlebar-title{display:flex;align-items:center;gap:6px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.title-icon{font-size:15px}
+.window-controls{display:flex;gap:3px;flex-shrink:0}
+.window-controls button{width:20px;height:19px;padding:0;line-height:14px;font-family:Arial;font-weight:bold;background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff}
+.menubar{height:27px;display:flex;align-items:center;padding:0 4px;gap:3px;border-bottom:1px solid #888}
+.menubar button{border:0;background:transparent;padding:4px 8px}
+.menubar button:active{background:#000080;color:white}
+.toolbar{display:flex;align-items:center;gap:7px;padding:9px 10px;border-bottom:1px solid #888}
+.win-button{background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff;padding:6px 10px;min-height:30px}
+.win-button:active,.win-button.pressed{border-color:#404040 #fff #fff #404040;padding:7px 9px 5px 11px}
+.win-button span{margin-right:4px}
+.toolbar-spacer{flex:1}
+.toolbar-status{font-size:9px;color:#555;letter-spacing:1px}
+.library-panel{padding:13px 14px 16px}
+.library-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
+.panel-caption{font-size:9px;letter-spacing:1px;color:#555}
+.library-heading h1{font-size:21px;margin:3px 0 0;font-weight:bold}
+.track-count{border:1px solid #888;border-color:#808080 #fff #fff #808080;padding:4px 7px;font-size:11px}
+.search-wrap{height:31px;background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;display:flex;align-items:center;padding:0 7px;gap:7px}
+.search-wrap input{border:0;outline:0;background:transparent;width:100%;font-size:12px}
+.list-header{display:grid;grid-template-columns:1fr 58px 90px;gap:8px;background:#d5d5d5;border:1px solid #888;border-color:#fff #808080 #808080 #fff;padding:6px 8px;margin-top:12px;font-size:11px;font-weight:bold}
+.empty-state{text-align:center;padding:30px 12px 27px}
+.empty-note{font-size:36px;color:var(--navy);margin-bottom:7px}
+.empty-state h2{font-size:16px;margin:0 0 8px}
+.empty-state p{max-width:290px;margin:0 auto 15px;line-height:1.5;font-size:12px}
+.default-button{font-weight:bold}
+.track-list{display:flex;flex-direction:column;max-height:40vh;overflow:auto}
+.track-row{display:grid;grid-template-columns:1fr 58px 90px;gap:8px;align-items:center;padding:7px 8px;border-bottom:1px solid #aaa;min-width:0}
+.track-row:nth-child(even){background:#d2d2d2}
+.track-row.active{background:#000080;color:#fff}
+.row-main{display:flex;align-items:center;gap:8px;min-width:0;cursor:pointer}
+.track-thumb{width:26px;height:26px;flex:0 0 26px;background:#eee;border:1px solid #777;display:grid;place-items:center;color:#000080}
+.row-info{min-width:0}.row-info strong,.row-info span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.row-info strong{font-size:12px}.row-info span{font-size:10px;color:#555;margin-top:2px}.track-row.active .row-info span{color:#ddd}
+.duration-label{font-size:10px;font-variant-numeric:tabular-nums}
+.row-actions{display:flex;justify-content:flex-end;gap:3px}.row-play,.remove-button{min-width:27px;padding:3px 5px;background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff;font-size:11px}.remove-button{font-size:15px}
+.statusbar{height:24px;border-top:1px solid #fff;display:flex;justify-content:space-between;align-items:center;padding:3px 7px;font-size:10px;color:#333}
+.player-window{width:min(440px,calc(100% - 10px));margin:0 auto 20px}
+.player-inner{padding:12px}
+.playing-top{display:flex;align-items:center;gap:10px}
+.album-art{width:52px;height:52px;display:grid;place-items:center;background:#000080;color:white;border:2px solid;border-color:#404040 #fff #fff #404040;font-size:27px;flex-shrink:0}
+.playing-info{flex:1;min-width:0}.playing-info strong,.playing-info span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.playing-info strong{font-size:12px}.playing-info span{font-size:10px;color:#555;margin-top:4px}
+.favorite{font-size:17px;min-width:34px;padding:4px}.favorite.on{color:#a00000}
+.progress-area{margin-top:12px;padding:0 2px}
+input[type=range]{width:100%;height:16px;accent-color:var(--navy);margin:0}
+.time-row{display:flex;justify-content:space-between;font-size:10px;color:#444;font-variant-numeric:tabular-nums}
+.controls{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:9px}.controls .win-button{font-size:10px;min-width:39px;padding:5px 7px}.controls .transport{font-size:15px;min-width:40px}
+.taskbar{position:fixed;z-index:10;left:0;right:0;bottom:0;height:42px;background:var(--gray);border-top:2px solid #fff;box-shadow:0 -1px #808080;display:flex;align-items:center;gap:6px;padding:4px 6px calc(4px + env(safe-area-inset-bottom))}
+.start-button,.taskbar-app{height:31px;background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff;padding:3px 9px;font-weight:bold;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.start-button{font-size:12px}.windows-flag{font-size:16px;color:#000080}
+.taskbar-app{font-size:10px;font-weight:normal;max-width:115px;overflow:hidden}.taskbar-app.active{border-color:#404040 #fff #fff #404040;background:#b8b8b8}
+.tray{margin-left:auto;height:29px;display:flex;align-items:center;gap:8px;padding:0 8px;border:1px solid;border-color:#808080 #fff #fff #808080;font-size:10px;white-space:nowrap}
+.start-menu{position:fixed;z-index:20;bottom:42px;left:5px;width:210px;display:flex;background:var(--gray);border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:1px 1px #000;padding:4px}
+.start-menu[hidden]{display:none}.start-side{width:32px;background:var(--navy);color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:bold;letter-spacing:1px;text-align:left;padding:8px 5px;font-size:14px}
+.start-items{flex:1;padding:3px}.start-items button{display:flex;align-items:center;gap:9px;width:100%;border:0;background:transparent;text-align:left;padding:9px 7px;font-size:12px}.start-items button:active{background:var(--navy);color:#fff}.start-separator{height:1px;background:#888;border-bottom:1px solid #fff;margin:4px}
+@media(min-width:650px){.desktop{padding-top:18px}.main-window{margin-top:18px}.player-window{margin-left:max(calc((100% - 760px)/2 + 18px),12px);margin-right:0}.desktop-icons{flex-direction:column;gap:12px}.track-list{max-height:340px}}
+@media(max-width:390px){.desktop{padding-left:6px;padding-right:6px}.toolbar{gap:5px;padding:7px}.win-button{padding:5px 7px;font-size:11px}.list-header,.track-row{grid-template-columns:1fr 43px 78px;gap:5px}.toolbar-status{display:none}.controls{gap:5px}.controls .win-button{min-width:33px;padding:4px}.controls .transport{min-width:35px}}
+
+.main-window.minimized,.player-window.minimized{display:none}
+.main-window.maximized{width:100%;margin:0 auto 15px}
