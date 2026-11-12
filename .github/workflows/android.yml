@@ -27,6 +27,11 @@ jobs:
       - name: Install packages
         run: npm install
 
+      - name: Prepare web files
+        run: |
+          mkdir -p www
+          cp index.html styles.css app.js www/
+
       - name: Add Android platform
         run: npx cap add android
 
@@ -45,3 +50,4 @@ jobs:
           name: musixyz-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+          
